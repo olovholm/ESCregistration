@@ -1,0 +1,15 @@
+<%= form_for @country, :url => "/country/create", :method => :put do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br />
+  <%= f.label :nor_name %>
+  <%= f.text_field :nor_name %><br />
+  <%= f.label :short_id %>
+  <%= f.text_field :short_id %><br />
+  <%= f.label :long_id %>
+  <%= f.text_field :long_id %><br />
+  <%= f.label :actor_name %>
+  <%= f.text_field :actor_name %><br />
+  <%= f.label :song_name %>
+  <%= f.text_field :song_name %><br />
+  <%= f.submit%>
+<% end %>

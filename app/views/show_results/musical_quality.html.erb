@@ -1,0 +1,17 @@
+<h2>Bekledning</h2>
+<table>
+  <tr>
+    <th>Land</th>
+    <th>Artist</th>
+    <th>Sang</th>
+    <th>Poeng</th>
+  </tr>
+<% @countrylist.each do |c| %>
+<tr>
+  <td><%=image_tag("#{c[:obj].short_id}.png")%><%= c[:obj].nor_name %></td>
+  <td><%= c[:obj].actor_name %></td>
+  <td><%= c[:obj].song_name %></td>
+  <td><%= c[:sum]%></td>
+</tr>
+<% end %>
+</table>

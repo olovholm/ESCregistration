@@ -1,0 +1,23 @@
+<h2>Resultatliste</h2>
+<table>
+  <tr>
+  <th>Navn</th>
+  <th></th>
+  <th></th>
+  </tr>
+  
+<% @teams.each do |v| %>
+<tr>
+  <td><%= v.team_name %></td>
+  <td><%= link_to "Vis", :action => "show", :id => v.id%></td>
+  <td><%= link_to "Slett", :action => "destroy", :id => v.id%></td>
+</tr>
+<% end %>
+  
+  
+
+</table>
+<ul id="content_list">
+  <li><%= link_to "Legg til nytt resultat", :action => "new" %> </li>
+</ul>
+  

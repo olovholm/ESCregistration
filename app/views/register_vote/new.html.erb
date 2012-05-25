@@ -1,0 +1,40 @@
+<h2>Legg til nytt resultat</h2>
+<%= form_tag('/register_vote/create', :method => :put) %>
+<fieldset>
+  <legend>Gruppe</legend>
+<%= label_tag "Gruppe/person navn"%>
+<%= text_field_tag "name" %><br />
+</fieldset>
+<fieldset>
+  <legend>Resultater</legend>
+<table>
+  <tr>
+  <th>Land</th>
+  <th>Sceneshow</th>
+  <th>Antrekk</th>
+  <th>Engelsk uttale</th>
+  <th>Musikalsk kvalitet</th>
+  <th>Helhetlig inntrykk</th>
+  </tr>
+
+<% @countries.each do |c| %>
+
+
+
+<tr id="<%= c.id %>">
+<td><%= c.name %></td>
+<td><input id="<%=c.id%>_show" name="<%=c.id%>_show" type="text" /></td>
+<td><input id="<%=c.id%>_dressing" name="<%=c.id%>_dressing" type="text" /></td>
+<td><input id="<%=c.id%>_english" name="<%=c.id%>_english" type="text" /></td>
+<td><input id="<%=c.id%>_mquality" name="<%=c.id%>_mquality" type="text" /></td>
+<td><input id="<%=c.id%>_total" name="<%=c.id%>_total" type="text" /></td>
+</tr>
+
+<% end %>
+
+</table>
+</fieldset>
+<%= submit_tag "lagre"%>
+</form>
+
+

@@ -1,0 +1,22 @@
+<h2>Landsliste</h2>
+<table>
+  <tr>
+  <th>Land</th>
+  <th>Flagg</th>
+  <th>Landskode</th>
+  <th>vis/slett</th>
+  </tr>
+<% @contries.each do |c| %>
+<tr>
+<td><%=c.nor_name%></td>
+<td>Bilde</td>
+<td><%=c.short_id%></td>
+<td><%=c.actor_name%></td>
+<td><%=c.song_name%></td>
+<td>vis/slett</td>
+</tr>
+<% end %>
+</table>
+<ul id="content_list">
+  <li><%= link_to "legg til nytt land", :action => "new"%></li>
+</ul>

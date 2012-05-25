@@ -1,0 +1,31 @@
+<h2>Verdier for <%=@team.team_name%> </h2>
+
+<fieldset>
+  <legend>Resultater</legend>
+<table>
+  <tr>
+  <th>Land</th>
+  <th>Sceneshow</th>
+  <th>Antrekk</th>
+  <th>Engelsk uttale</th>
+  <th>Musikalsk kvalitet</th>
+  <th>Helhetlig inntrykk</th>
+  </tr>
+
+<% @votes.each do |v| %>
+
+<tr id="<%= v.country.nor_name %>">
+<td><%= v.country.nor_name %></td>
+<td><%= v.show %></td>
+<td><%= v.dressing %></td>
+<td><%= v.english %></td>
+<td><%= v.musical_quality %></td>
+<td><%= v.total %></td>
+</tr>
+
+<% end %>
+
+</fieldset>
+</table>
+
+<p><%= link_to "Slett", :action => "destroy", :id => @team.id %></p>
